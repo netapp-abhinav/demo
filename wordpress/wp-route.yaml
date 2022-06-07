@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: wp-route
+  namespace: wordpress
+spec:
+  path: /
+  to:
+    kind: Service
+    name: wordpress-svc
+  port:
+    targetPort: 80
