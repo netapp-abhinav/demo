@@ -4,10 +4,11 @@ metadata:
   creationTimestamp: null
   labels:
     app: bgd
+    app.kubernetes.io/instance: bgd
   name: bgd
   namespace: bgd
 spec:
-  host: ""
+  host: ''
   port:
     targetPort: 8080
   to:
