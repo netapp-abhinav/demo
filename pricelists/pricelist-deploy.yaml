@@ -24,7 +24,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: quay.io/redhatworkshops/pricelist:v2020-AUG-07
+      - image: quay.io/redhatworkshops/pricelist:latest
         name: pricelist
         env:
         - name: MYSQL_DATABASE
