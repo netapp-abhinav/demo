@@ -6,7 +6,7 @@ metadata:
   name: myblog
   namespace: blog
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: myblog
@@ -16,7 +16,7 @@ spec:
         app: myblog
     spec:
       containers:
-        - image: ghost:2.6-alpine
+        - image: ghost:latest
           imagePullPolicy: Always
           name: myblog
           volumeMounts:
