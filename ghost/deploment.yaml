@@ -1,33 +1,32 @@
-apiVersion: apps/v1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
+  name: blog
   labels:
-    app: myblog
-  name: myblog
-  namespace: blog
+    app: blog
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myblog
+      app: blog
   template:
     metadata:
       labels:
-        app: myblog
+        app: blog
     spec:
       containers:
-        - image: ghost:latest
-          imagePullPolicy: Always
-          name: myblog
-          volumeMounts:
-            - mountPath: /var/lib/ghost/content
-              name: content
-      volumes:
-        - env:
-            - name: url
-              value: 'http://.com'
+      - name: blog
+        image: ghost:2.6-alpine
+        imagePullPolicy: Always
+        volumeMounts:
+        - mountPath: /var/lib/ghost/content
           name: content
-          persistentVolumeClaim:
-            claimName: blog-content
-          ports:
-            - containerPort: 2368
+      volumes:
+      - name: content
+        persistentVolumeClaim:
+          claimName: blog-content
+        ports:
+        - containerPort: 2368
+        env:
+        - name: url
+          value: http://my-blog.com
