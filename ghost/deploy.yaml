@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   labels:
     app: myblog
-    app.kubernetes.io/instance: blog
   name: myblog
   namespace: blog
 spec:
