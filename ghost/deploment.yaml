@@ -30,5 +30,5 @@ spec:
       volumes:
       - name: content
         persistentVolumeClaim:
-          claimName: blog-conten
+          claimName: blog-content
 
