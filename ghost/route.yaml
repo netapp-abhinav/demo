@@ -1,12 +1,1 @@
-apiVersion: apps/v1
-kind: Route
-metadata:
-  name: myblog-route
-  namespace: blog
-spec:
-  path: /
-  to:
-    kind: Service
-    name: svc-for-myblog
-  port:
-    targetPort: 2368
+
